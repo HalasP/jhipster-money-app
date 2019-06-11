@@ -1,0 +1,11 @@
+version: '2'
+services:
+  jhipstermoneyapp-postgresql:
+    image: postgres:11.3
+    # volumes:
+    #     - ~/volumes/jhipster/jhipsterMoneyApp/postgresql/:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=jhipsterMoneyApp
+      - POSTGRES_PASSWORD=
+    ports:
+      - 5432:5432
