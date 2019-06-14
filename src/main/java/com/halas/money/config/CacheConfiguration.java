@@ -43,6 +43,13 @@ public class CacheConfiguration {
             createCache(cm, com.halas.money.domain.User.class.getName());
             createCache(cm, com.halas.money.domain.Authority.class.getName());
             createCache(cm, com.halas.money.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.halas.money.domain.Asset.class.getName());
+            createCache(cm, com.halas.money.domain.Liability.class.getName());
+            createCache(cm, com.halas.money.domain.NetWorth.class.getName());
+            createCache(cm, com.halas.money.domain.MoneyUser.class.getName());
+            createCache(cm, com.halas.money.domain.MoneyUser.class.getName() + ".netWorths");
+            createCache(cm, com.halas.money.domain.MoneyUser.class.getName() + ".liabilities");
+            createCache(cm, com.halas.money.domain.MoneyUser.class.getName() + ".assets");
             // jhipster-needle-ehcache-add-entry
         };
     }

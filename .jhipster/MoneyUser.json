@@ -1,0 +1,41 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "netWorth",
+            "otherEntityRelationshipName": "moneyUser",
+            "relationshipName": "netWorth"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "liability",
+            "otherEntityRelationshipName": "moneyUser",
+            "relationshipName": "liability"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "asset",
+            "otherEntityRelationshipName": "moneyUser",
+            "relationshipName": "asset"
+        },
+        {
+            "relationshipName": "owner",
+            "otherEntityName": "user",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "login",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "moneyUser"
+        }
+    ],
+    "fields": [],
+    "changelogDate": "20190611181659",
+    "dto": "no",
+    "searchEngine": "elasticsearch",
+    "service": "no",
+    "entityTableName": "money_user",
+    "databaseType": "sql",
+    "jpaMetamodelFiltering": false,
+    "pagination": "no"
+}

@@ -1,0 +1,76 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-net-worth-heading" jhiTranslate="jhipsterMoneyApp.netWorth.home.createOrEditLabel">Create or edit a Net Worth</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterMoneyApp.netWorth.date" for="field_date">Date</label>
+                    <div class="input-group">
+                        <input id="field_date" type="text" class="form-control" name="date" ngbDatepicker  #dateDp="ngbDatepicker" formControlName="date"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                    <div *ngIf="editForm.get('date').invalid && (editForm.get('date').dirty || editForm.get('date').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('date').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterMoneyApp.netWorth.liabilitiesAmount" for="field_liabilitiesAmount">Liabilities Amount</label>
+                    <input type="number" class="form-control" name="liabilitiesAmount" id="field_liabilitiesAmount"
+                           formControlName="liabilitiesAmount"/>
+                    <div *ngIf="editForm.get('liabilitiesAmount').invalid && (editForm.get('liabilitiesAmount').dirty || editForm.get('liabilitiesAmount').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('liabilitiesAmount').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('liabilitiesAmount')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterMoneyApp.netWorth.assetsAmount" for="field_assetsAmount">Assets Amount</label>
+                    <input type="number" class="form-control" name="assetsAmount" id="field_assetsAmount"
+                           formControlName="assetsAmount"/>
+                    <div *ngIf="editForm.get('assetsAmount').invalid && (editForm.get('assetsAmount').dirty || editForm.get('assetsAmount').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('assetsAmount').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('assetsAmount')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterMoneyApp.netWorth.moneyUser" for="field_moneyUser">Money User</label>
+                    <select class="form-control" id="field_moneyUser" name="moneyUser" formControlName="moneyUser">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="moneyUserOption.id === editForm.get('moneyUser').value?.id ? editForm.get('moneyUser').value : moneyUserOption" *ngFor="let moneyUserOption of moneyusers; trackBy: trackMoneyUserById">{{moneyUserOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

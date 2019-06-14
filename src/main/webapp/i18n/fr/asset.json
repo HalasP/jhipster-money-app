@@ -1,0 +1,27 @@
+{
+  "jhipsterMoneyApp": {
+    "asset": {
+      "home": {
+        "title": "Assets",
+        "createLabel": "Créer un nouveau Asset",
+        "createOrEditLabel": "Créer ou éditer un Asset",
+        "search": "Recherche pour Asset",
+        "notFound": "Aucun Asset trouvé"
+      },
+      "created": "Un nouveau Asset a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Asset avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Asset avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Asset {{ id }} ?"
+      },
+      "detail": {
+        "title": "Asset"
+      },
+      "date": "Date",
+      "name": "Name",
+      "description": "Description",
+      "amount": "Amount",
+      "moneyUser": "Money User"
+    }
+  }
+}

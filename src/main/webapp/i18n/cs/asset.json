@@ -1,0 +1,27 @@
+{
+  "jhipsterMoneyApp": {
+    "asset": {
+      "home": {
+        "title": "Assets",
+        "createLabel": "Vytvořit Asset",
+        "createOrEditLabel": "Vytvořit nebo upravit Asset",
+        "search": "Vyhledat Asset",
+        "notFound": "No Asset found"
+      },
+      "created": "Byl vytvořen potomek entity Asset s identifikátorem {{ param }}",
+      "updated": "Potomek entity Asset s identifikátorem {{ param }} byl upravený.",
+      "deleted": "Potomek entity Asset s identifikátorem {{ param }} bol smazaný.",
+      "delete": {
+        "question": "Jste si jisti, že chcete smazat Asset {{ id }}?"
+      },
+      "detail": {
+        "title": "Asset"
+      },
+      "date": "Date",
+      "name": "Name",
+      "description": "Description",
+      "amount": "Amount",
+      "moneyUser": "Money User"
+    }
+  }
+}

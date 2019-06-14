@@ -1,0 +1,41 @@
+entity Asset {
+	date LocalDate required,
+    name String required,
+    description String,
+    amount Double required
+}
+
+entity Liability {
+	date LocalDate required,
+    name String required,
+    description String,
+    amount Double required
+}
+
+entity NetWorth {
+	date LocalDate required,
+    liabilitiesAmount Double required,
+    assetsAmount Double required
+}
+
+entity MoneyUser {
+
+}
+
+
+relationship OneToMany {
+ 	MoneyUser{netWorth} to NetWorth
+    MoneyUser{liability} to Liability,
+    MoneyUser{asset} to Asset
+}
+
+// Set pagination options
+
+// Use Data Transfert Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+//service all with serviceImpl except Employee, Job
+
+// Set an angular suffix
+// angularSuffix * with mySuffix

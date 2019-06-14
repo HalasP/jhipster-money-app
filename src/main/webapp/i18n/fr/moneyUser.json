@@ -1,0 +1,26 @@
+{
+  "jhipsterMoneyApp": {
+    "moneyUser": {
+      "home": {
+        "title": "MoneyUsers",
+        "createLabel": "Créer un nouveau Money User",
+        "createOrEditLabel": "Créer ou éditer un Money User",
+        "search": "Recherche pour Money User",
+        "notFound": "Aucun Money User trouvé"
+      },
+      "created": "Un nouveau Money User a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Money User avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Money User avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Money User {{ id }} ?"
+      },
+      "detail": {
+        "title": "Money User"
+      },
+      "netWorth": "Net Worth",
+      "liability": "Liability",
+      "asset": "Asset",
+      "owner": "Owner"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "jhipsterMoneyApp": {
+    "netWorth": {
+      "home": {
+        "title": "NetWorths",
+        "createLabel": "Créer un nouveau Net Worth",
+        "createOrEditLabel": "Créer ou éditer un Net Worth",
+        "search": "Recherche pour Net Worth",
+        "notFound": "Aucun Net Worth trouvé"
+      },
+      "created": "Un nouveau Net Worth a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Net Worth avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Net Worth avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Net Worth {{ id }} ?"
+      },
+      "detail": {
+        "title": "Net Worth"
+      },
+      "date": "Date",
+      "liabilitiesAmount": "Liabilities Amount",
+      "assetsAmount": "Assets Amount",
+      "moneyUser": "Money User"
+    }
+  }
+}

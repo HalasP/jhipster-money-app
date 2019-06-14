@@ -1,0 +1,27 @@
+{
+  "jhipsterMoneyApp": {
+    "liability": {
+      "home": {
+        "title": "Liabilities",
+        "createLabel": "Créer un nouveau Liability",
+        "createOrEditLabel": "Créer ou éditer un Liability",
+        "search": "Recherche pour Liability",
+        "notFound": "Aucun Liability trouvé"
+      },
+      "created": "Un nouveau Liability a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Liability avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Liability avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Liability {{ id }} ?"
+      },
+      "detail": {
+        "title": "Liability"
+      },
+      "date": "Date",
+      "name": "Name",
+      "description": "Description",
+      "amount": "Amount",
+      "moneyUser": "Money User"
+    }
+  }
+}

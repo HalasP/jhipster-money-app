@@ -1,0 +1,26 @@
+{
+  "jhipsterMoneyApp": {
+    "netWorth": {
+      "home": {
+        "title": "Net Worths",
+        "createLabel": "Vytvořit Net Worth",
+        "createOrEditLabel": "Vytvořit nebo upravit Net Worth",
+        "search": "Vyhledat Net Worth",
+        "notFound": "No Net Worth found"
+      },
+      "created": "Byl vytvořen potomek entity Net Worth s identifikátorem {{ param }}",
+      "updated": "Potomek entity Net Worth s identifikátorem {{ param }} byl upravený.",
+      "deleted": "Potomek entity Net Worth s identifikátorem {{ param }} bol smazaný.",
+      "delete": {
+        "question": "Jste si jisti, že chcete smazat Net Worth {{ id }}?"
+      },
+      "detail": {
+        "title": "Net Worth"
+      },
+      "date": "Date",
+      "liabilitiesAmount": "Liabilities Amount",
+      "assetsAmount": "Assets Amount",
+      "moneyUser": "Money User"
+    }
+  }
+}

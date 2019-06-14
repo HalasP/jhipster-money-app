@@ -1,0 +1,41 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="netWorth">
+            <h2><span jhiTranslate="jhipsterMoneyApp.netWorth.detail.title">Net Worth</span> {{netWorth.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterMoneyApp.netWorth.date">Date</span></dt>
+                <dd>
+                    <span>{{netWorth.date}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterMoneyApp.netWorth.liabilitiesAmount">Liabilities Amount</span></dt>
+                <dd>
+                    <span>{{netWorth.liabilitiesAmount}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterMoneyApp.netWorth.assetsAmount">Assets Amount</span></dt>
+                <dd>
+                    <span>{{netWorth.assetsAmount}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterMoneyApp.netWorth.moneyUser">Money User</span></dt>
+                <dd>
+                    <div *ngIf="netWorth.moneyUser">
+                        <a [routerLink]="['/money-user', netWorth.moneyUser?.id, 'view']">{{netWorth.moneyUser?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/net-worth', netWorth.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

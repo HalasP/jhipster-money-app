@@ -1,0 +1,27 @@
+{
+  "jhipsterMoneyApp": {
+    "liability": {
+      "home": {
+        "title": "Liabilities",
+        "createLabel": "Vytvořit Liability",
+        "createOrEditLabel": "Vytvořit nebo upravit Liability",
+        "search": "Vyhledat Liability",
+        "notFound": "No Liability found"
+      },
+      "created": "Byl vytvořen potomek entity Liability s identifikátorem {{ param }}",
+      "updated": "Potomek entity Liability s identifikátorem {{ param }} byl upravený.",
+      "deleted": "Potomek entity Liability s identifikátorem {{ param }} bol smazaný.",
+      "delete": {
+        "question": "Jste si jisti, že chcete smazat Liability {{ id }}?"
+      },
+      "detail": {
+        "title": "Liability"
+      },
+      "date": "Date",
+      "name": "Name",
+      "description": "Description",
+      "amount": "Amount",
+      "moneyUser": "Money User"
+    }
+  }
+}

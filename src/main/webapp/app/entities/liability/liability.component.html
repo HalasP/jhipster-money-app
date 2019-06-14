@@ -1,0 +1,84 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jhipsterMoneyApp.liability.home.title">Liabilities</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-liability" [routerLink]="['/liability/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span class="hidden-sm-down"  jhiTranslate="jhipsterMoneyApp.liability.home.createLabel">
+            Create new Liability
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="{{ 'jhipsterMoneyApp.liability.home.search' | translate }}">
+                    <button class="input-group-append btn btn-info" (click)="search(currentSearch)">
+                        <fa-icon [icon]="'search'"></fa-icon>
+                    </button>
+                    <button class="input-group-append btn btn-danger" (click)="clear()" *ngIf="currentSearch">
+                        <fa-icon [icon]="'trash-alt'"></fa-icon>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br/>
+    <div class="alert alert-warning" *ngIf="liabilities?.length === 0">
+        <span jhiTranslate="jhipsterMoneyApp.liability.home.notFound">No liabilities found</span>
+    </div>
+    <div class="table-responsive" *ngIf="liabilities?.length > 0">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="jhipsterMoneyApp.liability.date">Date</span></th>
+            <th><span jhiTranslate="jhipsterMoneyApp.liability.name">Name</span></th>
+            <th><span jhiTranslate="jhipsterMoneyApp.liability.description">Description</span></th>
+            <th><span jhiTranslate="jhipsterMoneyApp.liability.amount">Amount</span></th>
+            <th><span jhiTranslate="jhipsterMoneyApp.liability.moneyUser">Money User</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let liability of liabilities ;trackBy: trackId">
+                <td><a [routerLink]="['/liability', liability.id, 'view' ]">{{liability.id}}</a></td>
+                <td>{{liability.date | date:'mediumDate'}}</td>
+                <td>{{liability.name}}</td>
+                <td>{{liability.description}}</td>
+                <td>{{liability.amount}}</td>
+                <td>
+                    <div *ngIf="liability.moneyUser">
+                        <a [routerLink]="['../money-user', liability.moneyUser?.id, 'view' ]" >{{liability.moneyUser?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/liability', liability.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/liability', liability.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'liability', { outlets: { popup: liability.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

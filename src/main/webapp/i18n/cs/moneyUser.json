@@ -1,0 +1,26 @@
+{
+  "jhipsterMoneyApp": {
+    "moneyUser": {
+      "home": {
+        "title": "Money Users",
+        "createLabel": "Vytvořit Money User",
+        "createOrEditLabel": "Vytvořit nebo upravit Money User",
+        "search": "Vyhledat Money User",
+        "notFound": "No Money User found"
+      },
+      "created": "Byl vytvořen potomek entity Money User s identifikátorem {{ param }}",
+      "updated": "Potomek entity Money User s identifikátorem {{ param }} byl upravený.",
+      "deleted": "Potomek entity Money User s identifikátorem {{ param }} bol smazaný.",
+      "delete": {
+        "question": "Jste si jisti, že chcete smazat Money User {{ id }}?"
+      },
+      "detail": {
+        "title": "Money User"
+      },
+      "netWorth": "Net Worth",
+      "liability": "Liability",
+      "asset": "Asset",
+      "owner": "Owner"
+    }
+  }
+}
