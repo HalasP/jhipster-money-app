@@ -20,8 +20,7 @@
       "date": "Date",
       "name": "Name",
       "description": "Description",
-      "amount": "Amount",
-      "moneyUser": "Money User"
+      "amount": "Amount"
     }
   }
 }

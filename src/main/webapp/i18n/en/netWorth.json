@@ -19,8 +19,7 @@
       },
       "date": "Date",
       "liabilitiesAmount": "Liabilities Amount",
-      "assetsAmount": "Assets Amount",
-      "moneyUser": "Money User"
+      "assetsAmount": "Assets Amount"
     }
   }
 }

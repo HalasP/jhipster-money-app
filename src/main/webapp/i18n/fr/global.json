@@ -10,7 +10,6 @@
         "asset": "Asset",
         "liability": "Liability",
         "netWorth": "Net Worth",
-        "moneyUser": "Money User",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {
