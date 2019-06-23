@@ -37,7 +37,6 @@
             <th><span jhiTranslate="jhipsterMoneyApp.asset.name">Name</span></th>
             <th><span jhiTranslate="jhipsterMoneyApp.asset.description">Description</span></th>
             <th><span jhiTranslate="jhipsterMoneyApp.asset.amount">Amount</span></th>
-            <th><span jhiTranslate="jhipsterMoneyApp.asset.moneyUser">Money User</span></th>
             <th></th>
             </tr>
             </thead>
@@ -48,11 +47,6 @@
                 <td>{{asset.name}}</td>
                 <td>{{asset.description}}</td>
                 <td>{{asset.amount}}</td>
-                <td>
-                    <div *ngIf="asset.moneyUser">
-                        <a [routerLink]="['../money-user', asset.moneyUser?.id, 'view' ]" >{{asset.moneyUser?.id}}</a>
-                    </div>
-                </td>
                 <td class="text-right">
                     <div class="btn-group">
                         <button type="submit"

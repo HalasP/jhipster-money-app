@@ -21,12 +21,6 @@
                 <dd>
                     <span>{{liability.amount}}</span>
                 </dd>
-                <dt><span jhiTranslate="jhipsterMoneyApp.liability.moneyUser">Money User</span></dt>
-                <dd>
-                    <div *ngIf="liability.moneyUser">
-                        <a [routerLink]="['/money-user', liability.moneyUser?.id, 'view']">{{liability.moneyUser?.id}}</a>
-                    </div>
-                </dd>
             </dl>
 
             <button type="submit"

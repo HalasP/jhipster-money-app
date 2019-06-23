@@ -36,7 +36,6 @@
             <th><span jhiTranslate="jhipsterMoneyApp.netWorth.date">Date</span></th>
             <th><span jhiTranslate="jhipsterMoneyApp.netWorth.liabilitiesAmount">Liabilities Amount</span></th>
             <th><span jhiTranslate="jhipsterMoneyApp.netWorth.assetsAmount">Assets Amount</span></th>
-            <th><span jhiTranslate="jhipsterMoneyApp.netWorth.moneyUser">Money User</span></th>
             <th></th>
             </tr>
             </thead>
@@ -46,11 +45,6 @@
                 <td>{{netWorth.date | date:'mediumDate'}}</td>
                 <td>{{netWorth.liabilitiesAmount}}</td>
                 <td>{{netWorth.assetsAmount}}</td>
-                <td>
-                    <div *ngIf="netWorth.moneyUser">
-                        <a [routerLink]="['../money-user', netWorth.moneyUser?.id, 'view' ]" >{{netWorth.moneyUser?.id}}</a>
-                    </div>
-                </td>
                 <td class="text-right">
                     <div class="btn-group">
                         <button type="submit"

@@ -8,8 +8,6 @@ import * as moment from 'moment';
 import { JhiAlertService } from 'ng-jhipster';
 import { INetWorth, NetWorth } from 'app/shared/model/net-worth.model';
 import { NetWorthService } from './net-worth.service';
-import { IMoneyUser } from 'app/shared/model/money-user.model';
-import { MoneyUserService } from 'app/entities/money-user';
 
 @Component({
   selector: 'jhi-net-worth-update',
@@ -18,21 +16,18 @@ import { MoneyUserService } from 'app/entities/money-user';
 export class NetWorthUpdateComponent implements OnInit {
   isSaving: boolean;
 
-  moneyusers: IMoneyUser[];
   dateDp: any;
 
   editForm = this.fb.group({
     id: [],
     date: [null, [Validators.required]],
     liabilitiesAmount: [null, [Validators.required]],
-    assetsAmount: [null, [Validators.required]],
-    moneyUser: []
+    assetsAmount: [null, [Validators.required]]
   });
 
   constructor(
     protected jhiAlertService: JhiAlertService,
     protected netWorthService: NetWorthService,
-    protected moneyUserService: MoneyUserService,
     protected activatedRoute: ActivatedRoute,
     private fb: FormBuilder
   ) {}
@@ -42,13 +37,6 @@ export class NetWorthUpdateComponent implements OnInit {
     this.activatedRoute.data.subscribe(({ netWorth }) => {
       this.updateForm(netWorth);
     });
-    this.moneyUserService
-      .query()
-      .pipe(
-        filter((mayBeOk: HttpResponse<IMoneyUser[]>) => mayBeOk.ok),
-        map((response: HttpResponse<IMoneyUser[]>) => response.body)
-      )
-      .subscribe((res: IMoneyUser[]) => (this.moneyusers = res), (res: HttpErrorResponse) => this.onError(res.message));
   }
 
   updateForm(netWorth: INetWorth) {
@@ -56,8 +44,7 @@ export class NetWorthUpdateComponent implements OnInit {
       id: netWorth.id,
       date: netWorth.date,
       liabilitiesAmount: netWorth.liabilitiesAmount,
-      assetsAmount: netWorth.assetsAmount,
-      moneyUser: netWorth.moneyUser
+      assetsAmount: netWorth.assetsAmount
     });
   }
 
@@ -81,8 +68,7 @@ export class NetWorthUpdateComponent implements OnInit {
       id: this.editForm.get(['id']).value,
       date: this.editForm.get(['date']).value,
       liabilitiesAmount: this.editForm.get(['liabilitiesAmount']).value,
-      assetsAmount: this.editForm.get(['assetsAmount']).value,
-      moneyUser: this.editForm.get(['moneyUser']).value
+      assetsAmount: this.editForm.get(['assetsAmount']).value
     };
     return entity;
   }
@@ -101,9 +87,5 @@ export class NetWorthUpdateComponent implements OnInit {
   }
   protected onError(errorMessage: string) {
     this.jhiAlertService.error(errorMessage, null, null);
-  }
-
-  trackMoneyUserById(index: number, item: IMoneyUser) {
-    return item.id;
   }
 }

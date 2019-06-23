@@ -17,12 +17,6 @@
                 <dd>
                     <span>{{netWorth.assetsAmount}}</span>
                 </dd>
-                <dt><span jhiTranslate="jhipsterMoneyApp.netWorth.moneyUser">Money User</span></dt>
-                <dd>
-                    <div *ngIf="netWorth.moneyUser">
-                        <a [routerLink]="['/money-user', netWorth.moneyUser?.id, 'view']">{{netWorth.moneyUser?.id}}</a>
-                    </div>
-                </dd>
             </dl>
 
             <button type="submit"

@@ -58,6 +58,7 @@
             <column name="name" type="string"/>
             <column name="description" type="string"/>
             <column name="amount" type="numeric"/>
+            <column name="money_user_id" type="numeric"/>
         </loadData>
     </changeSet>
 

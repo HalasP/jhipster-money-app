@@ -53,6 +53,7 @@
             <column name="date" type="date"/>
             <column name="liabilities_amount" type="numeric"/>
             <column name="assets_amount" type="numeric"/>
+            <column name="money_user_id" type="numeric"/>
         </loadData>
     </changeSet>
 

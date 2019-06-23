@@ -54,14 +54,6 @@
                         </small>
                     </div>
                 </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="jhipsterMoneyApp.netWorth.moneyUser" for="field_moneyUser">Money User</label>
-                    <select class="form-control" id="field_moneyUser" name="moneyUser" formControlName="moneyUser">
-                        <option [ngValue]="null"></option>
-                        <option [ngValue]="moneyUserOption.id === editForm.get('moneyUser').value?.id ? editForm.get('moneyUser').value : moneyUserOption" *ngFor="let moneyUserOption of moneyusers; trackBy: trackMoneyUserById">{{moneyUserOption.id}}</option>
-                    </select>
-                </div>
             </div>
             <div>
                 <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
